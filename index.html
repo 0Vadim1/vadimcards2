@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра 21</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Модальне вікно реєстрації -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <h1>Ласкаво просимо до гри "21"!</h1>
+            <p>Введіть своє ім'я, щоб розпочати гру:</p>
+            <input type="text" id="playerName" placeholder="Ваше ім'я" class="input-field">
+            <button id="startGameBtn" class="btn">Почати гру</button>
+        </div>
+    </div>
+
+    <!-- Ігровий екран -->
+    <div class="game-container" id="gameScreen" style="display: none;">
+        <h1>Гра "21" – Раунд <span id="roundNumber">1</span> з 3</h1>
+        <div class="game-board">
+            <div class="player-cards">
+                <h2>Карти гравця</h2>
+                <div id="playerCards" class="card-container"></div>
+                <p>Сума очок: <span id="playerTotal">0</span></p>
+            </div>
+            <div class="computer-cards">
+                <h2>Карти комп'ютера</h2>
+                <div id="computerCards" class="card-container"></div>
+                <p>Сума очок: <span id="computerTotal">0</span></p>
+            </div>
+        </div>
+        <div class="game-result">
+            <h2>Результат гри:</h2>
+            <p id="winnerMessage"></p>
+            <div class="buttons-container">
+                <button id="nextRoundBtn" class="btn" style="display: none;">Наступний раунд</button>
+                <button id="restartGameBtn" class="btn" style="display: none;">Почати гру заново</button> <!-- Кнопка для початку гри заново -->
+                <button id="openRulesBtn" class="btn">Правила гри</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальне вікно для правил -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <h1>Правила гри</h1>
+        <p>1. Потрібно набрати точно 21 бал, щоб виграти.</p>
+<p>2. Якщо набрано більше 21 балів, гравець програє.</p>
+<p>3. Гра складається з трьох раундів. Переможе той, хто набере більше перемог після трьох раундів.</p>
+<p>4. Якщо сума карт дорівнює 21, це автоматична перемога раунду.</p>
+            <button id="closeRulesBtn">Закрити</button>
+        </div>
+    </div>
+<<button id="restartGameBtn" style="display:none;">Перезапустити гру</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
